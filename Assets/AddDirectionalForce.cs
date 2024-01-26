@@ -14,6 +14,10 @@ public class AddDirectionalForce : MonoBehaviour
 	private float prevTime;
 	private Rigidbody rb;
 	
+	void Awake()
+	{
+		rb = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+	}
 	void Start()
 	{
 		prevTime = Time.time;
@@ -38,7 +42,7 @@ public class AddDirectionalForce : MonoBehaviour
 	public void AddForce(GameObject other)
 	{
 		prevTime = Time.time;
-		rb = other.GetComponent<Rigidbody>();
+		// rb = other.GetComponent<Rigidbody>();
 	}
 
 }
